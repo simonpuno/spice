@@ -13,6 +13,7 @@ User.destroy_all
 u1 = User.create!({email: 'demo@user.com', password: 'password', first_name: 'Demo User', last_name: 'user', zip: 12345})
 u2 = User.create!({email: 'demo2@user.com', password: 'password', first_name: 'Demo User2', last_name: 'user2', zip: 12345})
 u3 = User.create!({email: 'demo3@user.com', password: 'password', first_name: 'Demo User3', last_name: 'user3', zip: 12345})
+u4 = User.create!({email: 'test4', password: 'password', first_name: 'Demo User4', last_name: 'user3', zip: 12345})
 
 b1 = Business.create!(biz_name: 'biz1', type_id: 1, address: 1, city_id: 1, hours: 1)
 b2 = Business.create!(biz_name: 'biz2', type_id: 1, address: 1, city_id: 1, hours: 1)

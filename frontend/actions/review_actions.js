@@ -23,17 +23,17 @@ const receiveErrors = errors => ({
 export const createReview = review => dispatch => (
     ReviewApiUtil.createReviewUtil(review)
         .then(review => dispatch(receiveReview(review)))
-        .catch(errors => dispatch(receiveErrors(errors.responseJSON)))
+        .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
 )
 
 export const updateReview = review => dispatch => (
     ReviewApiUtil.updateReviewUtil(review)
         .then(review => dispatch(receiveReview(review)))
-        .catch(errors => dispatch(receiveErrors(errors.responseJSON)))
+        .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
 )
 
 export const deleteReview = reviewId => dispatch => (
     ReviewApiUtil.deleteReviewUtil(reviewId)
         .then(() => dispatch(removeReview(reviewId)))
-        .catch(errors => dispatch(receiveErrors(errors.responseJSON)))
+        .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
 )

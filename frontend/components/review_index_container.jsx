@@ -6,9 +6,8 @@ const mSTP = state => ({
     reviews: Object.values(state.entities.reviews)
 })
 
-const mDTP = dispatch => ({
-    createReview: (review) => dispatch(createReview(review)),
-    removeReview: (reviewId) => dispatch(deleteReview(reviewId))
-})
+// const mDTP = dispatch => ({
 
-export default connect(mSTP, mDTP)(ReviewIndex)
+// })
+
+export default connect(mSTP, null)(ReviewIndex)

@@ -6,18 +6,20 @@ import LoginFormContainer from "./login_form_container";
 import SignupFormContainer from "./signup_form_container";
 import BusinessIndexContainer from './business_index_container';
 import BusinessShowContainer from './business_show_container';
+import CreateReviewFormContainer from './create_review_form_container'
 
 const App = () => (
     <div>
         <header>
-            <h1>spice</h1>
+            {/* <h1>spice</h1> */}
             <GreetingContainer />
         </header>
 
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
         <Route exact path="/businesses" component={BusinessIndexContainer} />
-        <Route path={`/businesses/:businessId`} component={BusinessShowContainer} />
+        <Route  exact path={`/businesses/:businessId`} component={BusinessShowContainer} />
+        <Route exact path={`/businesses/:businessId/reviews/new`} component={CreateReviewFormContainer} />
     </div>
 );
 
