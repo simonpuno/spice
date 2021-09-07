@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-
+# rails g controller api/users
 
     def create 
         @user = User.new(user_params)

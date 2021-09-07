@@ -12,7 +12,6 @@ class SessionForm extends React.Component {
             birthday: '',
             password: ''
         }
-        // this.demoUser = {email: test1, password: password}
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoUser = this.handleDemoUser.bind(this)
@@ -31,7 +30,7 @@ class SessionForm extends React.Component {
 
     handleDemoUser(e){
         e.preventDefault();
-        this.setState({email: 'test1', password: 'password'}, 
+        this.setState({ email: 'demo@user.com', password: 'password'},
             () => this.props.demoLogin(this.state))
             // .then(() => this.props.history.push('/')));
     }
