@@ -1,5 +1,6 @@
 import React from 'react';
 import BusinessIndexItem from './business_index_item';
+import HeaderContainer from './header_container';
 
 class BusinessIndex extends React.Component {
 
@@ -15,8 +16,13 @@ class BusinessIndex extends React.Component {
             )
         })
         return (
-            <div className='biz-index-container'>
-                <ul className='biz-ul'>{bizLis}</ul>
+            <div>
+                <header>
+                    <HeaderContainer />
+                </header>
+                <div className='biz-index-container'>
+                    <ul className='biz-ul'>{bizLis}</ul>
+                </div>
             </div>
         )
     }

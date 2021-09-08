@@ -5,7 +5,7 @@ class Splash extends React.Component{
     render(){
         return (
             <div>
-
+                <p>YOOO</p>
             </div>
         )
     }

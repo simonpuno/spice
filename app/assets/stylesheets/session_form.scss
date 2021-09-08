@@ -2,7 +2,8 @@ $earth-brown: #ad5f15;
 $spicy-red: #e60000;
 
 .session-outer-div {
-    width: 22%;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
 
@@ -15,7 +16,7 @@ $spicy-red: #e60000;
 .session-form-container {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 23%;
     align-items: center;
     height: 45vh;
     justify-content: center;
@@ -47,11 +48,10 @@ $spicy-red: #e60000;
 .signup-form-container {
     display: flex;
     flex-direction: column;
-    width: 200%;
     align-items: center;
     height: 45vh;
     justify-content: center;
-    padding-top: 10vh;
+    padding-top: 12vh;
 
     & > p {
         font-size: 0.85em;

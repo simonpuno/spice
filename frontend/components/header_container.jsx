@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Greeting from './greeting';
+import Header from './header';
 import { logoutUser } from '../actions/session_actions';
 
 const mSTP = (state) => ({
@@ -10,4 +10,4 @@ const mDTP = dispatch => ({
     logout: () => dispatch(logoutUser())
 })
 
-export default connect(mSTP, mDTP)(Greeting)
+export default connect(mSTP, mDTP)(Header)

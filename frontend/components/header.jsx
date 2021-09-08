@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPepperHot } from '@fortawesome/free-solid-svg-icons';
 
-class Greeting extends React.Component {
+class Header extends React.Component {
     constructor(props){
         super(props);
         this.handleLoginClick = this.handleLoginClick.bind(this);
@@ -48,4 +48,4 @@ class Greeting extends React.Component {
     }
 }
 
-export default withRouter(Greeting);
+export default withRouter(Header);
