@@ -14,6 +14,7 @@ const App = () => (
             <GreetingContainer />
         </header>
 
+        {/* <Route exact path='/'/> */}
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
         <Route exact path="/businesses" component={BusinessIndexContainer} />
