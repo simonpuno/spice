@@ -15,8 +15,8 @@ class BusinessIndex extends React.Component {
             )
         })
         return (
-            <div>
-                <ul>{bizLis}</ul>
+            <div className='biz-index-container'>
+                <ul className='biz-ul'>{bizLis}</ul>
             </div>
         )
     }

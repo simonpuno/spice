@@ -9,9 +9,8 @@ import BusinessShowContainer from './business_show_container';
 import CreateReviewFormContainer from './create_review_form_container'
 
 const App = () => (
-    <div>
+    <div className='app'>
         <header>
-            {/* <h1>spice</h1> */}
             <GreetingContainer />
         </header>
 

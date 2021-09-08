@@ -13,7 +13,8 @@
  *= require_self
  */
 
-@import './reset.scss';
-@import './nav_bar.scss';
-
-// *= require_tree . 
+@import './reset';
+@import './app';
+@import './nav_bar';
+@import './session_form';
+@import './components/biz_index'

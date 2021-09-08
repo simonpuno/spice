@@ -15,7 +15,7 @@ class BusinessIndexItem extends React.Component {
     render(){
         const {business} = this.props 
         return (
-            <li onClick={this.handleClick}>
+            <li  className='biz-li' onClick={this.handleClick}>
                 <h3>{business.biz_name}</h3>
                 <h6>RATING</h6>
                 <p>REVIEW INFO (will be its own component)</p>

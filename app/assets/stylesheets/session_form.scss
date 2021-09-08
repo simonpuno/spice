@@ -1,0 +1,136 @@
+$earth-brown: #ad5f15;
+$spicy-red: #e60000;
+
+.session-outer-div {
+    width: 22%;
+    display: flex;
+    justify-content: center;
+
+    & input {
+        border-radius: 4px;
+        border: 1px solid gray;
+    }
+}
+
+.session-form-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    height: 45vh;
+    justify-content: center;
+    padding-top: 10vh;
+
+    & > p {
+        font-size: 0.85em;
+    }
+
+    & > .signup-title {
+        padding-bottom: 0.8em;
+    }
+
+    & > h1 {
+        color: $spicy-red;
+        font-weight: bold;
+        font-size: 1.25em;
+    }
+
+    & button {
+        width: 100%;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.signup-form-container {
+    display: flex;
+    flex-direction: column;
+    width: 200%;
+    align-items: center;
+    height: 45vh;
+    justify-content: center;
+    padding-top: 10vh;
+
+    & > p {
+        font-size: 0.85em;
+    }
+
+    & > .signup-title {
+        padding-bottom: 0.8em;
+    }
+
+    & > h1 {
+        color: $spicy-red;
+        font-weight: bold;
+        font-size: 1.25em;
+    }
+
+    & button {
+        width: 100%;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.session-form {
+    display: flex;
+    flex-direction: column;
+    height: 8em;
+    justify-content: space-evenly;
+    width: 100%;
+
+    & input {
+        height: 2em;
+    }
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 70em;
+    width: 100%;
+    padding-bottom: 0.5em;
+
+    & input {
+        height: 2em;
+    }
+
+    .signup-input {
+        margin-bottom: 10px;
+    }
+
+    .name-inputs-container {
+        display: flex;
+    }
+
+    .birthday {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 0.85em;
+
+        input:hover {
+            cursor: pointer;
+        }
+    }   
+}
+
+.session-btn {
+    background-color: $spicy-red;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    height: 2.5em;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.login-error {
+    color: red;
+}

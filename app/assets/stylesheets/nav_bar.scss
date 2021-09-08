@@ -1,19 +1,62 @@
-body {
-    background-color: aqua;
+$earth-brown: #ad5f15;
+$spicy-red: #e60000;
+
+header {
+    width: 100%;
+}
+
+.title {
+    font-size: 1.5em;
+    padding-left: 2vw;
+    color: white;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .nav-bar {
-    background-color: red;
-}
-
-.nav-bar {
+    background-color: $earth-brown;
     display: flex;
     justify-content: space-between;
+    height: 10vh;
+    align-items: center;
 }
 
 .auth-links {
     display: flex;
-    background-color: yellow;
+    width: 10em;
+    padding-right: 1.75em;
+    justify-content: space-between;
+
+    button {
+        border-radius: 4px;
+        height: 3.25em;
+        width: 5.30em;
+        color: white;
+        border: 1px solid white;
+        transition-duration: 0.4s;
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
+
+    .login-btn:hover{
+        background-color: #9e5613;
+    }
+
+    .signup-btn:hover {
+        background-color: #cc0000;
+    }
+
+    .signup-btn {
+        background-color: $spicy-red;
+    }
+
+    .login-btn {
+        background-color: transparent;
+    }
 }
 
 .logged-in {

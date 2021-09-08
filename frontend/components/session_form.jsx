@@ -39,90 +39,109 @@ class SessionForm extends React.Component {
         let errors = null;
         if (this.props.errors) {
             errors = this.props.errors.map((err, idx) => (
-                <li key={idx}>{err}</li>
+                <li className='login-error' key={idx}>{err}</li>
             ))
         }
 
         const link = this.props.formType === 'login' ? (
-            <Link to='/signup'>Sign Up</Link>
+            <p>New to spice? <Link to='/signup'>Sign Up</Link></p>
         ) : (
-            <Link to='/login'>Log In</Link>
+            <p>Already on spice? <Link to='/login'>Log In</Link></p>
+        )
+
+        const head = this.props.formType === 'login' ? (
+            <h1>Log in to spice</h1>
+            
+        ) : (
+            <h1 className='signup-title'>Sign Up for spice</h1>
         )
 
         const form = this.props.formType === 'signup' ? (
-                <form onSubmit={this.handleSubmit}>
-                    <label>First Name:
+            <div className='signup-form-container'>
+                {head}
+                <ul>{errors}</ul>
+                <form onSubmit={this.handleSubmit} className='signup-form'>
+                        <div className='name-inputs-container'>
+                            <input
+                                type="text"
+                                className='signup-input'
+                                value={this.state.first_name}
+                                onChange={this.handleChange('first_name')}
+                                placeholder='First Name'
+                            />
+                            <input
+                                type="text"
+                                className='signup-input'
+                                value={this.state.last_name}
+                                onChange={this.handleChange('last_name')}
+                                placeholder='Last Name'
+                            />
+                        </div>
                         <input
                             type="text"
-                            value={this.state.first_name}
-                            onChange={this.handleChange('first_name')}
-                        />
-                    </label>
-                    <label>Last Name:
-                        <input
-                            type="text"
-                            value={this.state.last_name}
-                            onChange={this.handleChange('last_name')}
-                        />
-                    </label>
-                    <label>email:
-                        <input
-                            type="text"
+                            className='signup-input'
                             value={this.state.email}
                             onChange={this.handleChange('email')}
-                        />
-                    </label>
-                    <label>Zip Code:
+                            placeholder='Email'
+                        /> 
                         <input
                             type="text"
+                            className='signup-input'
+                            value={this.state.password}
+                            onChange={this.handleChange('password')}
+                            placeholder='Password'
+                        />
+                        <input
+                            type="text"
+                            className='signup-input'
                             value={this.state.zip}
                             onChange={this.handleChange('zip')}
+                            placeholder='ZIP Code'
                         />
-                    </label>
-                    <label>Birthday (optional):
-                        <input
-                            type="date"
-                            value={this.state.birthday}
-                            onChange={this.handleChange('birthday')}
-                        />
-                    </label>
-                    <label>Password:
-                        <input
-                            type="text"
-                            value={this.state.password}
-                            onChange={this.handleChange('password')}
-                        />
-                    </label>
-                    <button type="submit">{this.props.formType}</button>
-                </form>
+                        <label className='signup-input' className='birthday'>Birthday (optional):
+                            <input
+                                type="date"
+                                value={this.state.birthday}
+                                onChange={this.handleChange('birthday')}
+                            />
+                        </label>
+                        <button className='signup-input'className='session-btn' type="submit">Sign Up</button>
+                    </form>
+                <button onClick={this.handleDemoUser}>Login as Demo User</button>
+                    { link }
+                </div >
         ) : (
-                <form onSubmit={this.handleSubmit}>
-                    <label>email:
+                <div className='session-form-container'>
+                    {head}
+                    <ul>{errors}</ul>
+                    <form onSubmit={this.handleSubmit} className='session-form'>
                         <input
                             type="text"
                             value={this.state.email}
                             onChange={this.handleChange('email')}
+                            placeholder='Email'
                         />
-                    </label>
-                    <label>Password:
                         <input
                             type="text"
                             value={this.state.password}
                             onChange={this.handleChange('password')}
+                            placeholder='Password'
                         />
-                    </label>
-                    <button type="submit">{this.props.formType}</button>
-                </form>
+                        <button className='session-btn' type="submit">Log In</button>
+                    </form>
+                    <button onClick={this.handleDemoUser}>Login as Demo User</button>
+                    {link}
+                </div>
         )
 
         return (
-            <div>
-                <h2>{this.props.formType}</h2>
-                <ul>{errors}</ul>
-                {form}
-                <button onClick={this.handleDemoUser}>Login as Demo User</button>
-                <p>{link}</p>
-            </div>
+            // <div className='session-form-container'>
+            //     {head}
+            //     <ul>{errors}</ul>
+            <div className='session-outer-div'>{form}</div>
+            //     {/* <button onClick={this.handleDemoUser}>Login as Demo User</button>
+            //     {link}
+            // </div> */}
         )
     }
 }
