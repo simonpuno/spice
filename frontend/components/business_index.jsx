@@ -17,9 +17,11 @@ class BusinessIndex extends React.Component {
         })
         return (
             <div>
-                <header>
+                <header className='biz-index-header'>
                     <HeaderContainer />
                 </header>
+                <h3 className='best-text'>Best Restaurants in Chicago, IL</h3>
+                <div className='map-placeholder'>MAP</div>
                 <div className='biz-index-container'>
                     <ul className='biz-ul'>{bizLis}</ul>
                 </div>

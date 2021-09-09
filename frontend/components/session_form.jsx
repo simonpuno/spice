@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPepperHot } from '@fortawesome/free-solid-svg-icons';
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -14,7 +17,8 @@ class SessionForm extends React.Component {
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleDemoUser = this.handleDemoUser.bind(this)
+        this.handleDemoUser = this.handleDemoUser.bind(this);
+        this.handleLogoClick = this.handleLogoClick.bind(this);
     }
 
     handleChange(type) {
@@ -33,6 +37,11 @@ class SessionForm extends React.Component {
         this.setState({ email: 'demo@user.com', password: 'password'},
             () => this.props.demoLogin(this.state))
             // .then(() => this.props.history.push('/')));
+    }
+
+    handleLogoClick(e) {
+        e.preventDefault();
+        this.props.history.push('/')
     }
 
     render() {
@@ -107,7 +116,7 @@ class SessionForm extends React.Component {
                         </label>
                         <button className='signup-input'className='session-btn' type="submit">Sign Up</button>
                     </form>
-                <button onClick={this.handleDemoUser}>Login as Demo User</button>
+                <button className='demo-btn' onClick={this.handleDemoUser}>Login as Demo User</button>
                     { link }
                 </div >
         ) : (
@@ -129,7 +138,7 @@ class SessionForm extends React.Component {
                         />
                         <button className='session-btn' type="submit">Log In</button>
                     </form>
-                    <button onClick={this.handleDemoUser}>Login as Demo User</button>
+                    <button  className='demo-btn' onClick={this.handleDemoUser}>Login as Demo User</button>
                     {link}
                 </div>
         )
@@ -138,7 +147,12 @@ class SessionForm extends React.Component {
             // <div className='session-form-container'>
             //     {head}
             //     <ul>{errors}</ul>
-            <div className='session-outer-div'>{form}</div>
+            <div>
+                <header className='session-header' onClick={this.handleLogoClick}>
+                    <h1 className='session-logo'>spice <FontAwesomeIcon icon={faPepperHot} /></h1>
+                </header>
+                <div className='session-outer-div'>{form}</div>
+            </div>
             //     {/* <button onClick={this.handleDemoUser}>Login as Demo User</button>
             //     {link}
             // </div> */}
@@ -146,4 +160,4 @@ class SessionForm extends React.Component {
     }
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);

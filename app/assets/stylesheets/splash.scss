@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+$inter: 'Inter', sans-serif;
+$spicy-red: #e60000;
+$earth-brown: #ad5f15;
+
+.splash-page-container {
+    height: 100vh;
+}
+
+.splash-logo {
+    color: white;
+    font-size: 2.75em;
+    padding-bottom: 0.5em;
+    font-family: $inter;
+}
+
+.splash-top-container {
+    height: 100%;
+    width: 100%;
+    background-image: image-url('peppers.jpeg');
+    background-size: 100%, 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    header {
+        position: relative;
+        left: 30%;
+        bottom: 30%;
+
+        button {
+            height: 3.25em;
+            width: 6em;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .auth-btn-left {
+            background-color: transparent;
+            border: transparent;
+            color: white;
+            font-weight: bold;
+            border-bottom: 2px transparent transparent;
+
+            &:hover {
+                border-bottom: 2px solid white;
+            }
+        }
+
+        .auth-btn-right {
+            border-radius: 4px;
+            margin-left: 20px;
+            border: 2px solid white;
+            background-color: transparent;
+            color: white;
+            font-weight: bold;
+            transition-duration: 0.6s;
+
+            &:hover {
+                background-color: white;
+                color: #7a7a7a;
+            }
+        }
+    }
+
+    .splash-inputs-container {
+        display: flex;
+        height: 2.75em;
+        width: 70%;
+        font-family: $inter;
+
+        label {
+            background-color: white;
+            color: darkgray;
+
+            &:hover {
+                cursor: text;
+            }
+
+            input {
+                border: none;
+                outline: none;
+            }
+        }
+
+        .left-input {
+            border-right: 1px solid grey;
+            border-radius: 4px 0px 0px 4px;
+            padding: 0.85em;
+            width: 45%;
+        }
+
+        .right-input {
+            padding: 0.85em;
+            width: 45%;
+        }
+        
+        button {
+            width: 6%;
+            background-color: $spicy-red;
+            border: none;
+            outline: none;
+            border-radius: 0px 4px 4px 0px;
+            color: white;
+            font-family: $inter;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
