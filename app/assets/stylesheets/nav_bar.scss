@@ -1,14 +1,15 @@
 $earth-brown: #ad5f15;
 $spicy-red: #e60000;
 
-header {
-    width: 100%;
-}
+// header {
+//     width: 100%;
+// }
 
 .title {
     font-size: 1.5em;
     padding-left: 2vw;
     color: white;
+    font-family: $inter;
 
     &:hover {
         cursor: pointer;
@@ -21,6 +22,7 @@ header {
     justify-content: space-between;
     height: 10vh;
     align-items: center;
+    font-family: $inter;
 }
 
 .auth-links {
@@ -28,6 +30,7 @@ header {
     width: 10em;
     padding-right: 1.75em;
     justify-content: space-between;
+    font-family: $inter;
 
     button {
         border-radius: 4px;

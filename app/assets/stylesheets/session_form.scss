@@ -1,6 +1,24 @@
 $earth-brown: #ad5f15;
 $spicy-red: #e60000;
 
+.session-header{
+    display: flex;
+    width: 100%;
+    background-color: $earth-brown;
+    justify-content: center;
+
+    .session-logo {
+        color: white;
+        font-size: 2.75em;
+        padding: 0.25em;  
+        font-family: $inter;
+        
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
 .session-outer-div {
     width: 100%;
     height: 100%;
@@ -21,6 +39,7 @@ $spicy-red: #e60000;
     height: 45vh;
     justify-content: center;
     padding-top: 10vh;
+    font-family: $inter;
 
     & > p {
         font-size: 0.85em;
@@ -52,6 +71,7 @@ $spicy-red: #e60000;
     height: 45vh;
     justify-content: center;
     padding-top: 12vh;
+    font-family: $inter;
 
     & > p {
         font-size: 0.85em;
@@ -125,6 +145,21 @@ $spicy-red: #e60000;
     font-weight: bold;
     border-radius: 4px;
     height: 2.5em;
+    border: $spicy-red;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.demo-btn {
+    background-color: $spicy-red;
+    font-weight: bold;
+    color: white;
+    border: $spicy-red;
+    border-radius: 4px;
+    height: 1.5em;
+    margin-bottom: 4px;
 
     &:hover {
         cursor: pointer;
