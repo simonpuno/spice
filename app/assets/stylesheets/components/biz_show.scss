@@ -16,14 +16,42 @@
 
 .biz-show-info {
     position: absolute;
-    top: 55vh;
+    // top: 55vh;
+    top: 50vh;
     left: 7vw;
     font-family: $inter;
     color: white;
 
+    & * {
+        // margin-bottom: 5px;
+        margin-top: 7px;
+    }
+
     h1 {
         font-weight: bolder;
         font-size: 2.75em;
+    }
+
+    .show-rating {
+        color: $spicy-red;
+        font-size: 2em;
+        display: flex;
+        /* align-content: flex-end; */
+        align-items: center;
+
+        & * {
+            margin-right: 7px;
+        }
+
+        .num-reviews {
+            color: white;
+            font-size: 0.6em;
+            padding-top: 4px;
+        }
+    }
+
+    .claimed {
+        color: #00cbd6;
     }
 }
 

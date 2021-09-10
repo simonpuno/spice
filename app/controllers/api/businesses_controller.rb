@@ -1,7 +1,7 @@
 class Api::BusinessesController < ApplicationController
 
     def index 
-        @businesses = Business.all 
+        @businesses = Business.includes(:reviews).with_attached_photos.all 
         render :index 
     end
 

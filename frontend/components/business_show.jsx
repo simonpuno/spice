@@ -8,6 +8,8 @@ import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
 import { faDirections } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { faFireAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 class BusinessShow extends React.Component{
     constructor(props){
@@ -28,6 +30,11 @@ class BusinessShow extends React.Component{
         if (!this.props.business) return null;
         const {business} = this.props;
         if (!this.props.business.photoUrls) return null;
+        const flames = [];
+        for (let i = 0; i < business.aveRating; i++) {
+            flames.push(<FontAwesomeIcon key={i} icon={faFireAlt} /> )
+        }
+        const numReviews = Object.values(business.reviews).length;
 
         return (
             <div>
@@ -42,8 +49,8 @@ class BusinessShow extends React.Component{
                     </div>
                     <div className='biz-show-info'>
                         <h1>{business.biz_name}</h1>
-                        <h4>RATING</h4>
-                        <h4>Claimed? - $$ - BIZ TYPE: {business.type_id}</h4>
+                        <h4 className='show-rating'>{Object.values(flames)} <span className='num-reviews'>{numReviews} reviews</span></h4>
+                        <h4><span className='claimed'><FontAwesomeIcon icon={faCheckCircle} /> Claimed</span> - $$ - BIZ TYPE: {business.type_id}</h4>
                         <h4>Open Today?</h4>
                     </div>
                     <button className='review-btn' onClick={this.handleWriteReview}> <FontAwesomeIcon icon={faStar}/> WRITE A REVIEW</button>
@@ -56,13 +63,13 @@ class BusinessShow extends React.Component{
                                     <h4>{business.address}</h4>
                                 </div>
                                 <div className='hours-list'>                         
-                                    <p>Mon <span>11:00 AM - 8:00 PM</span></p>
-                                    <p>Tue <span>11:00 AM - 8:00 PM</span></p>
-                                    <p>Wed <span>11:00 AM - 8:00 PM</span></p>
-                                    <p>Thu <span>11:00 AM - 8:00 PM</span></p>
-                                    <p>Fri <span>11:00 AM - 8:00 PM</span></p>
-                                    <p>Sat <span>11:00 AM - 8:00 PM</span></p>
-                                    <p>Sun <span>11:00 AM - 8:00 PM</span></p>
+                                    <p>Mon <span>{business.hours}</span></p>
+                                    <p>Tue <span>{business.hours}</span></p>
+                                    <p>Wed <span>{business.hours}</span></p>
+                                    <p>Thu <span>{business.hours}</span></p>
+                                    <p>Fri <span>{business.hours}</span></p>
+                                    <p>Sat <span>{business.hours}</span></p>
+                                    <p>Sun <span>{business.hours}</span></p>
                                 </div>
                             </div>
                         </div>

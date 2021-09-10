@@ -10,9 +10,9 @@ class BusinessIndex extends React.Component {
 
     render(){
         if (this.props.businesses.length === 0) return null;
-        const bizLis = this.props.businesses.map(biz => {
+        const bizLis = this.props.businesses.map((biz, idx) => {
             return (
-                <BusinessIndexItem key={biz.id} business={biz} fetchBusiness={this.props.fetchBusiness}/> 
+                <BusinessIndexItem rank={idx+1} rating={biz.rating} key={biz.id} business={biz} fetchBusiness={this.props.fetchBusiness}/> 
             )
         })
         return (

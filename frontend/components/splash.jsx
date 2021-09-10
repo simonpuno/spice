@@ -26,10 +26,10 @@ class Splash extends React.Component{
     render(){
 
         const display = this.props.currentUser ? (
-            <header>
-                <button className='logout-btn' onClick={this.props.logout}>Logout</button>
-            </header>
-            // <LogoutDropdown logout={this.props.logout}/>
+            // <header>
+            //     <button className='logout-btn' onClick={this.props.logout}>Logout</button>
+            // </header>
+            <LogoutDropdown logout={this.props.logout}/>
         ) : (
             < header className='auth-btns' >
                 <button className='auth-btn-left' onClick={this.handleLoginClick}>Log In</button>
