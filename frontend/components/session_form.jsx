@@ -44,6 +44,10 @@ class SessionForm extends React.Component {
         this.props.history.push('/')
     }
 
+    componentWillUnmount(){
+        this.props.switchPage();
+    }
+
     render() {
         let errors = null;
         if (this.props.errors) {
@@ -151,7 +155,10 @@ class SessionForm extends React.Component {
                 <header className='session-header' onClick={this.handleLogoClick}>
                     <h1 className='session-logo'>spice <FontAwesomeIcon icon={faPepperHot} /></h1>
                 </header>
-                <div className='session-outer-div'>{form}</div>
+                <div className='auth-container'>
+                    <div className='session-outer-div'>{form}</div>
+                    <div className='auth-photo'></div>
+                </div>
             </div>
             //     {/* <button onClick={this.handleDemoUser}>Login as Demo User</button>
             //     {link}

@@ -1,4 +1,5 @@
 json.extract! @business, :id, :biz_name, :address, :type_id, :city_id, :hours
+json.photoUrls @business.photos.map { |file| url_for(file) }
 
 json.reviews do 
     @business.reviews.each do |review|

@@ -37,9 +37,9 @@ $spicy-red: #e60000;
 .session-form-container {
     display: flex;
     flex-direction: column;
-    width: 23%;
+    width: 50%;
     align-items: center;
-    height: 45vh;
+    height: 50vh;
     justify-content: center;
     padding-top: 10vh;
     font-family: $inter;
@@ -171,4 +171,17 @@ $spicy-red: #e60000;
 
 .login-error {
     color: red;
+}
+
+.auth-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.auth-photo {
+    width: 100%;
+    background-image: image-url('signup_illustration.png');
+    background-repeat: no-repeat;
+    position: relative;
+    top: 3em;
 }

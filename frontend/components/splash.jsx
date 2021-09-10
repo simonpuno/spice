@@ -23,25 +23,34 @@ class Splash extends React.Component{
     }
 
     render(){
+
+        const display = this.props.currentUser ? (
+            <header>
+                <button className='logout-btn' onClick={this.props.logout}>Logout</button>
+            </header>
+        ) : (
+            < header className='auth-btns' >
+                <button className='auth-btn-left' onClick={this.handleLoginClick}>Log In</button>
+                <button className='auth-btn-right' onClick={this.handleSignupClick} >Sign Up</button>
+            </header >
+        )
+
         return (
             <div className='splash-page-container'>
                 <div className='splash-top-container'>
-                    <header className='auth-btns'>
-                        <button className='auth-btn-left' onClick={this.handleLoginClick}>Log In</button>
-                        <button className='auth-btn-right' onClick={this.handleSignupClick} >Sign Up</button>
-                    </header>
-                    <h1 className='splash-logo'>spice <FontAwesomeIcon icon={faPepperHot} /></h1>
-                    <div className='splash-inputs-container'>
-                        <label className='left-input'> Find
-                            <input type="text" />
-                        </label>
-                        <label className='right-input'> Near
-                            <input type="text" />
-                        </label>
-                        <button>
-                            <FontAwesomeIcon icon={faSearch}/>
-                        </button>
-                    </div>
+                        {display}
+                        <h1 className='splash-logo'>spice <FontAwesomeIcon icon={faPepperHot} /></h1>
+                        <div className='splash-inputs-container'>
+                            <label className='left-input'> Find
+                                <input type="text" />
+                            </label>
+                            <label className='right-input'> Near
+                                <input type="text" />
+                            </label>
+                            <button>
+                                <FontAwesomeIcon icon={faSearch}/>
+                            </button>
+                        </div>
                 </div>
                 <div className='middle-links'>
 

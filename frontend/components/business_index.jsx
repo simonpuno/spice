@@ -12,7 +12,7 @@ class BusinessIndex extends React.Component {
         if (this.props.businesses.length === 0) return null;
         const bizLis = this.props.businesses.map(biz => {
             return (
-                <BusinessIndexItem key={biz.id} business={biz}/> 
+                <BusinessIndexItem key={biz.id} business={biz} fetchBusiness={this.props.fetchBusiness}/> 
             )
         })
         return (

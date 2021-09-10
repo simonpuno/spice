@@ -27,6 +27,7 @@ class BusinessShow extends React.Component{
     render(){
         if (!this.props.business) return null;
         const {business} = this.props;
+        if (!this.props.business.photoUrls) return null;
 
         return (
             <div>
@@ -35,7 +36,9 @@ class BusinessShow extends React.Component{
                 </header>
                 <div className='show-container'>
                     <div className='biz-photos-container'>
-                        PHOTOS
+                        <img src={`${business.photoUrls[0]}`} alt="" />
+                        <img src={`${business.photoUrls[1]}`} alt="" />
+                        <img src={`${business.photoUrls[2]}`} alt="" />
                     </div>
                     <div className='biz-show-info'>
                         <h1>{business.biz_name}</h1>
@@ -48,9 +51,9 @@ class BusinessShow extends React.Component{
                         <div className='hours-container'>
                             <h2>Location &amp; Hours</h2>
                             <div className='hours'>
-                                <div class='location'>
+                                <div className='location'>
                                     <div>MAP</div>
-                                    <h4>ADDRESS: {business.address}</h4>
+                                    <h4>{business.address}</h4>
                                 </div>
                                 <div className='hours-list'>                         
                                     <p>Mon <span>11:00 AM - 8:00 PM</span></p>
@@ -74,7 +77,7 @@ class BusinessShow extends React.Component{
                                     <span><FontAwesomeIcon icon={faPhoneAlt} /></span>
                                 </div>
                                 <div>
-                                    <h4>ADDRESS{business.address}</h4>
+                                    <h4>{business.address}</h4>
                                     <span><FontAwesomeIcon icon={faDirections} /></span>
                                 </div>
                                 <div>

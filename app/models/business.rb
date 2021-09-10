@@ -22,4 +22,7 @@ class Business < ApplicationRecord
         primary_key: :id,
         foreign_key: :business_id,
         class_name: :Review 
+
+    # has_one_attached :photo
+    has_many_attached :photos
 end

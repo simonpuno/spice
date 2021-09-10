@@ -10,7 +10,7 @@ $earth-brown: #ad5f15;
 .splash-logo {
     color: white;
     font-size: 2.75em;
-    padding-bottom: 0.5em;
+    padding-bottom: 1em;
     font-family: $inter;
 }
 
@@ -27,7 +27,7 @@ $earth-brown: #ad5f15;
     header {
         position: relative;
         left: 30%;
-        bottom: 30%;
+        bottom: 15%;
 
         button {
             height: 3.25em;
@@ -64,6 +64,23 @@ $earth-brown: #ad5f15;
                 color: #7a7a7a;
             }
         }
+
+        .logout-btn {
+            border-radius: 4px;
+            margin-left: 20px;
+            border: 2px solid white;
+            background-color: transparent;
+            color: white;
+            font-weight: bold;
+            transition-duration: 0.6s;
+            position: relative;
+            left: 5em;
+
+            &:hover {
+                background-color: white;
+                color: #7a7a7a;
+            }
+        }
     }
 
     .splash-inputs-container {
@@ -71,6 +88,7 @@ $earth-brown: #ad5f15;
         height: 2.75em;
         width: 70%;
         font-family: $inter;
+        margin-bottom: 10em;
 
         label {
             background-color: white;
