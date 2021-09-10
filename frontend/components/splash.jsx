@@ -11,6 +11,7 @@ class Splash extends React.Component{
         super(props);
         this.handleLoginClick = this.handleLoginClick.bind(this);
         this.handleSignupClick = this.handleSignupClick.bind(this);
+        this.handleSearchClick = this.handleSearchClick.bind(this);
     }
 
     handleSignupClick(e) {
@@ -21,6 +22,11 @@ class Splash extends React.Component{
     handleLoginClick(e) {
         e.preventDefault();
         this.props.history.push('/login');
+    }
+
+    handleSearchClick(e) {
+        e.preventDefault();
+        this.props.history.push('/businesses')
     }
 
     render(){
@@ -49,7 +55,7 @@ class Splash extends React.Component{
                             <label className='right-input'> Near
                                 <input type="text" />
                             </label>
-                            <button>
+                            <button onClick={this.handleSearchClick}>
                                 <FontAwesomeIcon icon={faSearch}/>
                             </button>
                         </div>
