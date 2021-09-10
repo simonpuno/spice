@@ -1,4 +1,5 @@
 import React from 'react';
+import LogoutDropdown from './logout_dropdown'
 import { withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -28,6 +29,7 @@ class Splash extends React.Component{
             <header>
                 <button className='logout-btn' onClick={this.props.logout}>Logout</button>
             </header>
+            // <LogoutDropdown logout={this.props.logout}/>
         ) : (
             < header className='auth-btns' >
                 <button className='auth-btn-left' onClick={this.handleLoginClick}>Log In</button>
