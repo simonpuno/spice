@@ -10,6 +10,11 @@ class Api::ReviewsController < ApplicationController
         end
     end
 
+    def show 
+        @review = Review.find_by(id: params[:id])
+        render :show 
+    end
+
     def update
         @review = Review.find_by(id: params[:id])
 

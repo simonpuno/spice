@@ -54,24 +54,33 @@ class BusinessShow extends React.Component{
                         <h4>Open Today?</h4>
                     </div>
                     <button className='review-btn' onClick={this.handleWriteReview}> <FontAwesomeIcon icon={faStar}/> WRITE A REVIEW</button>
-                    <div className='mid-section'>
-                        <div className='hours-container'>
-                            <h2>Location &amp; Hours</h2>
-                            <div className='hours'>
-                                <div className='location'>
-                                    <div>MAP</div>
-                                    <h4>{business.address}</h4>
-                                </div>
-                                <div className='hours-list'>                         
-                                    <p>Mon <span>{business.hours}</span></p>
-                                    <p>Tue <span>{business.hours}</span></p>
-                                    <p>Wed <span>{business.hours}</span></p>
-                                    <p>Thu <span>{business.hours}</span></p>
-                                    <p>Fri <span>{business.hours}</span></p>
-                                    <p>Sat <span>{business.hours}</span></p>
-                                    <p>Sun <span>{business.hours}</span></p>
+                    <div className='show-section-flex-container'>
+                        <div className='left-section-flex'>
+                            <div className='mid-section'>
+                                <div className='hours-container'>
+                                    <h2>Location &amp; Hours</h2>
+                                    <div className='hours'>
+                                        <div className='location'>
+                                            <div>MAP</div>
+                                            <h4>{business.address}</h4>
+                                        </div>
+                                        <div className='hours-list'>                         
+                                            <p>Mon <span>{business.hours}</span></p>
+                                            <p>Tue <span>{business.hours}</span></p>
+                                            <p>Wed <span>{business.hours}</span></p>
+                                            <p>Thu <span>{business.hours}</span></p>
+                                            <p>Fri <span>{business.hours}</span></p>
+                                            <p>Sat <span>{business.hours}</span></p>
+                                            <p>Sun <span>{business.hours}</span></p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                            <div className='description'>
+                                <h2>About the Business</h2>
+                                <p>DESCRIPTION</p>
+                            </div>
+                            <ReviewIndexContainer />
                         </div>
                         <div className='right-bar-container'>
                             <div className='right-bar'>
@@ -94,12 +103,6 @@ class BusinessShow extends React.Component{
                             </div>
                         </div>
                     </div>
-                    <div className='description'>
-                        <h2>About the Business</h2>
-                        <p>DESCRIPTION</p>
-                    </div>
-                    <p>REVIEW INDEX WILL GO BELOW</p>
-                    <ReviewIndexContainer />
                 </div>
             </div>
         )

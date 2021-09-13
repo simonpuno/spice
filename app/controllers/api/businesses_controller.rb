@@ -6,7 +6,7 @@ class Api::BusinessesController < ApplicationController
     end
 
     def show 
-        @business = Business.includes(:reviews).with_attached_photos.find_by(id: params[:id])
+        @business = Business.includes(:reviews, :review_authors).with_attached_photos.find_by(id: params[:id])
         render :show 
     end
 end

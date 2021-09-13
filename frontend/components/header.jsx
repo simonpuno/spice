@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPepperHot } from '@fortawesome/free-solid-svg-icons';
+import LogoutDropdown from './logout_dropdown';
 
 class Header extends React.Component {
     constructor(props){
@@ -28,10 +29,11 @@ class Header extends React.Component {
 
     render(){
         const display = this.props.currentUser ? (
-            <div className='logged-in'>
-                <p>Welcome, {this.props.currentUser.first_name}!</p>
-                <button onClick={this.props.logout}>Logout</button>
-            </div>
+            // <div className='logged-in'>
+            //     <p>Welcome, {this.props.currentUser.first_name}!</p>
+            //     <button onClick={this.props.logout}>Logout</button>
+            // </div>
+            <LogoutDropdown logout={this.props.logout}/>
         ) : (
             <div className='auth-links'>
                 <button className='login-btn' onClick={this.handleLoginClick}>Log In</button>

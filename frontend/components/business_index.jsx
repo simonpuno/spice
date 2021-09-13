@@ -1,6 +1,7 @@
 import React from 'react';
 import BusinessIndexItem from './business_index_item';
 import HeaderContainer from './header_container';
+import Map from './map';
 
 class BusinessIndex extends React.Component {
 
@@ -21,7 +22,7 @@ class BusinessIndex extends React.Component {
                     <HeaderContainer />
                 </header>
                 <h3 className='best-text'>Best Restaurants in Chicago, IL</h3>
-                <div className='map-placeholder'>MAP</div>
+                <Map />
                 <div className='biz-index-container'>
                     <ul className='biz-ul'>{bizLis}</ul>
                 </div>

@@ -20,6 +20,12 @@ const receiveErrors = errors => ({
     errors 
 })
 
+export const fetchReview = reviewId => dispatch => (
+    ReviewApiUtil.fetchReviewUtil(reviewId)
+        .then(review => dispatch(receiveReview(review)))
+        .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
+)
+
 export const createReview = review => dispatch => (
     ReviewApiUtil.createReviewUtil(review)
         .then(review => dispatch(receiveReview(review)))

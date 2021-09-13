@@ -15,6 +15,7 @@ $spicy-red: #e60000;
         font-size: 2.75em;
         padding: 0.25em;  
         font-family: $inter;
+        font-weight: bold;
         
         &:hover {
             cursor: pointer;
@@ -43,6 +44,12 @@ $spicy-red: #e60000;
     justify-content: center;
     padding-top: 10vh;
     font-family: $inter;
+
+    & h3 {
+        padding-bottom: 0.8em;
+        font-size: 0.75em;
+        padding-top: 5px;
+    }
 
     & > p {
         font-size: 0.85em;
@@ -80,14 +87,20 @@ $spicy-red: #e60000;
         font-size: 0.85em;
     }
 
-    & > .signup-title {
-        padding-bottom: 0.8em;
-    }
+    // & > .signup-title {
+    //     padding-bottom: 0.8em;
+    // }
 
     & > h1 {
         color: $spicy-red;
         font-weight: bold;
         font-size: 1.25em;
+    }
+
+    & h3 {
+        padding-bottom: 0.8em;
+        font-size: 0.75em;
+        padding-top: 5px;
     }
 
     & button {
@@ -105,6 +118,10 @@ $spicy-red: #e60000;
     height: 8em;
     justify-content: space-evenly;
     width: 100%;
+
+    button {
+        margin-top: 10px;
+    }
 
     & input {
         height: 2em;
@@ -129,6 +146,11 @@ $spicy-red: #e60000;
 
     .name-inputs-container {
         display: flex;
+        justify-content: space-between;
+
+        input {
+            width: 47.25%;
+        }
     }
 
     .birthday {
@@ -161,7 +183,7 @@ $spicy-red: #e60000;
     color: white;
     border: $spicy-red;
     border-radius: 4px;
-    height: 1.5em;
+    height: 2.5em;
     margin-bottom: 4px;
 
     &:hover {
@@ -171,6 +193,8 @@ $spicy-red: #e60000;
 
 .login-error {
     color: red;
+    color: red;
+    font-size: 0.75em;
 }
 
 .auth-container {

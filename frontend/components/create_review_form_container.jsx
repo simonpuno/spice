@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import { fetchBusiness } from '../actions/business_actions';
 import { createReview } from '../actions/review_actions';
-import CreateReviewForm from './create_review_form'
+import CreateReviewForm from './create_review_form';
 
 const mSTP = (state, ownProps) => ({
     business: state.entities.businesses[ownProps.match.params.businessId],

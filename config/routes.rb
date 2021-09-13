@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
     resources :businesses, only: [:index, :show]
 
-    resources :reviews, only: [:create, :destroy, :update]
+    resources :reviews, only: [:create, :destroy, :update, :show]
 
   end
 end

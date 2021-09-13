@@ -13,14 +13,12 @@
     margin-left: 1.5em;
 }
 
-.map-placeholder {
-    position: fixed;
+#map-container {
+    position: fixed !important;
     width: 30%;
-    height: 100%;
+    height: 90%;
     right: 0;
     top: 10vh;
-    border: 2px solid black;
-    background-color: lightgreen;
 }
 
 .biz-index-container {

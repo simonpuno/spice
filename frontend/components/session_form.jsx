@@ -61,6 +61,11 @@ class SessionForm extends React.Component {
         ) : (
             <p>Already on spice? <Link to='/login'>Log In</Link></p>
         )
+        const topLink = this.props.formType === 'login' ? (
+            <h3>New to spice? <Link to='/signup'>Sign Up</Link></h3>
+        ) : (
+            <h3>Already on spice? <Link to='/login'>Log In</Link></h3>
+        )
 
         const head = this.props.formType === 'login' ? (
             <h1>Log in to spice</h1>
@@ -72,6 +77,7 @@ class SessionForm extends React.Component {
         const form = this.props.formType === 'signup' ? (
             <div className='signup-form-container'>
                 {head}
+                {topLink}
                 <ul>{errors}</ul>
                 <form onSubmit={this.handleSubmit} className='signup-form'>
                         <div className='name-inputs-container'>
@@ -111,7 +117,7 @@ class SessionForm extends React.Component {
                             onChange={this.handleChange('zip')}
                             placeholder='ZIP Code'
                         />
-                        <label className='signup-input' className='birthday'>Birthday (optional):
+                        <label className='signup-input' className='birthday'>Birthday (optional)
                             <input
                                 type="date"
                                 value={this.state.birthday}
@@ -126,6 +132,7 @@ class SessionForm extends React.Component {
         ) : (
                 <div className='session-form-container'>
                     {head}
+                    {topLink}
                     <ul>{errors}</ul>
                     <form onSubmit={this.handleSubmit} className='session-form'>
                         <input

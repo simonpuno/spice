@@ -19,6 +19,12 @@ json.reviews do
             json.content review.content 
             json.rating review.rating 
             json.user_id review.user_id 
+            @business.review_authors.each do |author|
+                if review.user_id === author.id 
+                    json.author_first_name author.first_name
+                    json.author_last_init author.last_name[0]
+                end
+            end
         end
     end
 end
