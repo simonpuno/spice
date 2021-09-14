@@ -1,5 +1,7 @@
 import React from 'react';
 import HeaderContainer from './header_container';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFireAlt } from '@fortawesome/free-solid-svg-icons';
 import { withRouter } from 'react-router-dom';
 
 class CreateReviewForm extends React.Component{
@@ -9,10 +11,14 @@ class CreateReviewForm extends React.Component{
             content: '',
             rating: '',
             user_id: this.props.userId,
-            business_id: this.props.match.params.businessId 
+            business_id: this.props.match.params.businessId,
+            val: '0',
+            ratingClicked: false 
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleStarHover = this.handleStarHover.bind(this);
+        this.handleStarLeave = this.handleStarLeave.bind(this);
     }
 
     componentDidMount(){
@@ -20,7 +26,13 @@ class CreateReviewForm extends React.Component{
     }
 
     handleChange(type){
-        return e => this.setState({[type]: e.currentTarget.value});
+        return e => {
+            if (type === 'rating') {
+                this.setState({ val: e.currentTarget.value, ratingClicked: true});
+                // this.setState({ratingClicked: true})
+            }
+            this.setState({[type]: e.currentTarget.value});
+        };
     }
 
     handleSubmit(e){
@@ -30,8 +42,38 @@ class CreateReviewForm extends React.Component{
             .then(() => this.props.history.push(`/businesses/${this.state.business_id}`))
     }
 
+    handleStarHover(e){
+        e.preventDefault();
+        this.setState({val: e.currentTarget.value});
+    }
+
+    handleStarLeave(e){
+        e.preventDefault();
+        if (this.state.ratingClicked) {
+            this.setState({val: this.state.rating});
+        } else {
+            this.setState({val: 0});
+        }
+    }
+
     render(){
         if (!this.props.business) return null;
+
+        let ratingText = 'Select your rating';
+        if (this.state.val === '1') {
+            ratingText = 'Not good'
+        } else if (this.state.val === '2'){
+            ratingText = "Could've been better"
+        } else if (this.state.val === '3'){
+            ratingText = 'OK'
+        } else if (this.state.val === '4'){
+            ratingText = 'Good'
+        } else if (this.state.val === '5'){
+            ratingText = 'Great'
+        } else {
+            ratingText = 'Select your rating'
+        }
+
         return (
             <div>
                 <header>
@@ -42,17 +84,37 @@ class CreateReviewForm extends React.Component{
                     <form className='review-form'>
                         <div className='review-inputs'>
                             <div className='rating-inputs'>
-                                <label>1</label>
-                                    <input onChange={this.handleChange('rating')} type="radio" value="1" name="rating"/>
-                                <label>2</label>
-                                    <input onChange={this.handleChange('rating')} type="radio" value="2" name="rating"/>
-                                <label>3</label>
-                                    <input onChange={this.handleChange('rating')} type="radio" value="3" name="rating"/>
-                                <label>4</label>
-                                    <input onChange={this.handleChange('rating')} type="radio" value="4" name="rating"/>
-                                <label>5</label>
-                                    <input onChange={this.handleChange('rating')} type="radio" value="5" name="rating"/>
-                                <h6>Select your rating</h6>
+                                <label>
+                                    <input onMouseEnter={this.handleStarHover} onMouseLeave={this.state.ratingClicked ? null : this.handleStarLeave} onClick={this.handleChange('rating')} type="radio" value="1" name="rating"/>
+                                    <span className={this.state.val >= 1 ? 'red' : 'grey' }>
+                                        <FontAwesomeIcon key='1' icon={faFireAlt} />
+                                    </span>
+                                </label>
+                                <label>
+                                    <input onMouseEnter={this.handleStarHover} onMouseLeave={this.state.ratingClicked ? null : this.handleStarLeave} onClick={this.handleChange('rating')} type="radio" value="2" name="rating"/>
+                                    <span className={this.state.val >= 2 ? 'red' : 'grey'}>
+                                        <FontAwesomeIcon key='2' icon={faFireAlt} />
+                                    </span>
+                                </label>
+                                <label>
+                                    <input onMouseEnter={this.handleStarHover} onMouseLeave={this.state.ratingClicked ? null : this.handleStarLeave} onClick={this.handleChange('rating')} type="radio" value="3" name="rating"/>
+                                    <span className={this.state.val >= 3 ? 'red' : 'grey'}>
+                                        <FontAwesomeIcon key='3' icon={faFireAlt} />
+                                    </span>
+                                </label>
+                                <label>
+                                    <input onMouseEnter={this.handleStarHover} onMouseLeave={this.state.ratingClicked ? null : this.handleStarLeave} onClick={this.handleChange('rating')} type="radio" value="4" name="rating"/>
+                                    <span className={this.state.val >= 4 ? 'red' : 'grey'}>
+                                        <FontAwesomeIcon key='4' icon={faFireAlt} />
+                                    </span>
+                                </label>
+                                <label>
+                                    <input onMouseEnter={this.handleStarHover} onMouseLeave={this.state.ratingClicked ? null : this.handleStarLeave} onClick={this.handleChange('rating')} type="radio" value="5" name="rating"/>
+                                    <span className={this.state.val >= 5 ? 'red' : 'grey'}>
+                                        <FontAwesomeIcon key='5' icon={faFireAlt} />
+                                    </span>
+                                </label>
+                                <h6>{ratingText}</h6>
                             </div>
                             <textarea  
                                 value={this.state.content}

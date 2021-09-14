@@ -12,6 +12,7 @@ class LogoutDropdown extends React.Component {
         }
 
         this.handleEditReview = this.handleEditReview.bind(this);
+        this.handleRemoveReview = this.handleRemoveReview.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
 
@@ -37,7 +38,7 @@ class LogoutDropdown extends React.Component {
                 <div onClick={(e) => e.stopPropagation()} className={this.state.show ? "show-dropdown" : "hide-dropdown"}>
                     <ul className='dropdown-list'>
                         <li onClick={this.handleEditReview}>Edit Review</li>
-                        <li>Remove Review</li>
+                        <li onClick={this.handleRemoveReview}>Remove Review</li>
                     </ul>
                 </div>
             </button>

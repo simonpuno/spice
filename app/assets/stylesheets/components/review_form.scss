@@ -13,27 +13,58 @@
 }
 
 .review-form {
-    // border: 1px solid black;
-    // border-radius: 4px;
 
     .review-inputs {
-        border: 1px solid black;
+        border: 1px solid grey;
         border-radius: 4px;
         padding: 1.5em;
         height: 50vh;
 
         .rating-inputs {
             display: flex;
+            align-items: center;
+
+            input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 1.85em;
+                width: 1.85em;
+            }
+
+            input, span {
+                padding-inline: 1px;
+            }
+
+            span {
+                height: 100%;
+                width: 100%;
+                font-size: 1.85em;
+            }
+
+            h6 {
+                font-size: 0.8em;
+                margin-left: 5px;
+            }
+
+            .red {
+                color: $spicy-red;
+            }
+
+            .grey {
+                color: #bfbfbf;
+            }
         }
 
         textarea {
             font-family: $inter;
             font-size: 15px;
-            border: 1px solid black;
             resize: none;
             margin-top: 20px;
             width: 90%;
             height: 85%;
+            border: none;
+            outline: none;
         }
     }
 
