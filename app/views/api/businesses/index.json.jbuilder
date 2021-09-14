@@ -9,6 +9,7 @@
         json.extract! biz, :id, :biz_name
         json.photoUrl url_for(biz.photos[0])
         json.review biz.reviews[0].content
+        json.numReviews biz.reviews.length 
         json.rating rating 
     end
 end

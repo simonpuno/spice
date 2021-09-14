@@ -27,6 +27,15 @@ class Business < ApplicationRecord
         through: :reviews,
         source: :author 
 
+    has_many :type_ids,
+        primary_key: :id,
+        foreign_key: :business_id,
+        class_name: :BusinessType
+
+    has_many :types,
+        through: :type_ids,
+        source: :types
+
     # has_one_attached :photo
     has_many_attached :photos
 end

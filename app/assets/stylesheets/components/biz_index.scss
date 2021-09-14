@@ -3,6 +3,7 @@
 .biz-index-header {
     position: sticky;
     top: 0px;
+    z-index: 3;
 }
 
 .best-text {
@@ -10,7 +11,7 @@
     font-weight: bolder;
     font-size: 1.5em;
     margin-top: 1em;
-    margin-left: 1.5em;
+    margin-left: 1.75em;
 }
 
 #map-container {
@@ -26,6 +27,7 @@
     height: 100%;
     display: flex;
     font-family: $inter;
+    box-shadow: 5px 0px;
 }
 
 .biz-ul {
@@ -35,11 +37,13 @@
     flex-direction: column;
     align-items: center;
     margin-right: 30%;
+    // box-shadow: 5px 0px 0px 0px;
+    z-index: 2;
 }
 
 .biz-li {
     padding: 1em;
-    border: 1px solid darkgray;
+    border: 1px solid lightgray;
     border-radius: 4px;
     margin-top: 2em;
     width: 80%;
@@ -54,7 +58,8 @@
 
     .biz-image {
         height: 100%;
-        width: 30%;
+        min-width: 13em;
+        max-width: 13em;
 
         img {
             height: 100%;
@@ -75,13 +80,38 @@
             font-size: 1.5em;
         }
 
+        .rating-container {
+            display: flex;
+            align-items: center;
+            span {
+                color: #949494;
+            }
+        }
+
         .rating {
             color: $spicy-red;
             font-size: 1.5em;
+            margin-right: 7px;
+        }
+
+        .review-preview {
+            display: flex;
+            height: 2.119em;
         }
 
         p {
             color: #949494;
+            margin-left: 0.75em;
+            overflow: hidden;
+        }
+
+        .more {
+            color: blue;
+            z-index: 10;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 }
