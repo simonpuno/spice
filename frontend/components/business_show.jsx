@@ -1,6 +1,7 @@
 import React from 'react';
 import ReviewIndexContainer from './review_index_container';
 import HeaderContainer from './header_container';
+import Map from './map';
 import { withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-regular-svg-icons';
@@ -35,6 +36,8 @@ class BusinessShow extends React.Component{
             flames.push(<FontAwesomeIcon key={i} icon={faFireAlt} /> )
         }
         const numReviews = Object.values(business.reviews).length;
+        const bizTypes = business.types.map((type, i) => type.biz_type)
+        const types = bizTypes.join(', ')
 
         return (
             <div>
@@ -50,7 +53,7 @@ class BusinessShow extends React.Component{
                     <div className='biz-show-info'>
                         <h1>{business.biz_name}</h1>
                         <h4 className='show-rating'>{Object.values(flames)} <span className='num-reviews'>{numReviews} reviews</span></h4>
-                        <h4><span className='claimed'><FontAwesomeIcon icon={faCheckCircle} /> Claimed</span> - $$ - BIZ TYPE: {business.type_id}</h4>
+                        <h4><span className='claimed'><FontAwesomeIcon icon={faCheckCircle} /> Claimed</span> &#183; $ &#183; {types}</h4>
                         <h4>Open Today?</h4>
                     </div>
                     <button className='review-btn' onClick={this.handleWriteReview}> <FontAwesomeIcon icon={faStar}/> WRITE A REVIEW</button>
@@ -61,7 +64,7 @@ class BusinessShow extends React.Component{
                                     <h2>Location &amp; Hours</h2>
                                     <div className='hours'>
                                         <div className='location'>
-                                            <div>MAP</div>
+                                            <Map businesses={[business]} />
                                             <h4>{business.address}</h4>
                                         </div>
                                         <div className='hours-list'>                         
@@ -78,7 +81,7 @@ class BusinessShow extends React.Component{
                             </div>
                             <div className='description'>
                                 <h2>About the Business</h2>
-                                <p>DESCRIPTION</p>
+                                <p>{business.description}</p>
                             </div>
                             <ReviewIndexContainer />
                         </div>

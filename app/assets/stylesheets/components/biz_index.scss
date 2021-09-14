@@ -1,5 +1,3 @@
-
-
 .biz-index-header {
     position: sticky;
     top: 0px;
@@ -92,6 +90,19 @@
             color: $spicy-red;
             font-size: 1.5em;
             margin-right: 7px;
+        }
+
+        .types {
+            span {
+                font-weight: bold;
+                color: rgb(107, 107, 107);
+                border: 1px solid lightgray;
+                font-size: 0.8em;
+                margin-inline: 2.3px;
+                border-radius: 4px;
+                background-color: lightgray;
+                padding: 2px;
+            }
         }
 
         .review-preview {

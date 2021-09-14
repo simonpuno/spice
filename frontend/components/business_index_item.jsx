@@ -28,12 +28,15 @@ class BusinessIndexItem extends React.Component {
     }
 
     render(){
+        if (!this.props.business) return null;
         const {business} = this.props 
         const flames = [];
         for (let i = 0; i < this.props.rating; i++) {
             flames.push(<FontAwesomeIcon key={i} icon={faFireAlt}/>)
         }
 
+        const bizTypes = business.types.map((type, i) => <span key={i}>{type.biz_type}</span>)
+        if (!business.review) return null;
         const shortReview = this.shortenReview(business.review) 
 
         return (
@@ -48,7 +51,7 @@ class BusinessIndexItem extends React.Component {
                         <h6 className='rating'>{Object.values(flames)}</h6>
                         <span>{business.numReviews}</span>
                     </div>
-                    <h6>TYPE - $$</h6>
+                    <h6 className='types'>{bizTypes} $</h6>
                     <div className='review-preview'>
                         <FontAwesomeIcon icon={faCommentAlt}/> 
                         <p>"{shortReview}" <span className='more'>more</span></p>

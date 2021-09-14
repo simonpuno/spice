@@ -22,7 +22,7 @@ class BusinessIndex extends React.Component {
                     <HeaderContainer />
                 </header>
                 <h3 className='best-text'>Best Restaurants in Chicago, IL</h3>
-                <Map />
+                <Map businesses={this.props.businesses}/>
                 <div className='biz-index-container'>
                     <ul className='biz-ul'>{bizLis}</ul>
                 </div>

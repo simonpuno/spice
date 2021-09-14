@@ -10,6 +10,12 @@
         json.photoUrl url_for(biz.photos[0])
         json.review biz.reviews[0].content
         json.numReviews biz.reviews.length 
-        json.rating rating 
+        json.rating rating
+        json.lat biz.lat 
+        json.lng biz.lng
+        # biz.types.each do |type_obj|
+        #     type_obj.type_name 
+        # end
+        json.types biz.types   
     end
 end

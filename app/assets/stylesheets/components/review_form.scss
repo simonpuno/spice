@@ -1,0 +1,54 @@
+.review-form-container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 25%;
+    margin-left: 25%;
+    font-family: $inter;
+
+    h2 {
+        margin-block: 1em;
+        font-weight: bold;
+        font-size: 30px;
+    }
+}
+
+.review-form {
+    // border: 1px solid black;
+    // border-radius: 4px;
+
+    .review-inputs {
+        border: 1px solid black;
+        border-radius: 4px;
+        padding: 1.5em;
+        height: 50vh;
+
+        .rating-inputs {
+            display: flex;
+        }
+
+        textarea {
+            font-family: $inter;
+            font-size: 15px;
+            border: 1px solid black;
+            resize: none;
+            margin-top: 20px;
+            width: 90%;
+            height: 85%;
+        }
+    }
+
+    button {
+        background-color: $spicy-red;
+        color: white;
+        font-weight: bold;
+        border-radius: 4px;
+        height: 2.5em;
+        border: $spicy-red;
+        width: 150px;
+        margin-block: 2em;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

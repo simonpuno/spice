@@ -39,26 +39,30 @@ class EditReviewForm extends React.Component {
                 <header>
                     <HeaderContainer />
                 </header>
-                <div>
+                <div className='review-form-container'>
                     <h2>{this.props.business.biz_name}</h2>
-                    <form>
-                        <h6>Select your rating:</h6>
-                        <label>1</label>
-                            <input onChange={this.handleChange('rating')} type="radio" value="1" name="rating" />
-                        <label>2</label>
-                            <input onChange={this.handleChange('rating')} type="radio" value="2" name="rating" />
-                        <label>3</label>
-                            <input onChange={this.handleChange('rating')} type="radio" value="3" name="rating" />
-                        <label>4</label>
-                            <input onChange={this.handleChange('rating')} type="radio" value="4" name="rating" />
-                        <label>5</label>
-                            <input onChange={this.handleChange('rating')} type="radio" value="5" name="rating" />
-                        <textarea
-                            value={this.state.content}
-                            onChange={this.handleChange('content')}
-                            cols="30"
-                            rows="10"
-                        />
+                    <form className='review-form'>
+                        <div className='review-inputs'>
+                            <div className='rating-inputs'>
+                                <label>1</label>
+                                    <input onChange={this.handleChange('rating')} type="radio" value="1" name="rating" />
+                                <label>2</label>
+                                    <input onChange={this.handleChange('rating')} type="radio" value="2" name="rating" />
+                                <label>3</label>
+                                    <input onChange={this.handleChange('rating')} type="radio" value="3" name="rating" />
+                                <label>4</label>
+                                    <input onChange={this.handleChange('rating')} type="radio" value="4" name="rating" />
+                                <label>5</label>
+                                    <input onChange={this.handleChange('rating')} type="radio" value="5" name="rating" />
+                                <h6>Select your rating:</h6>
+                            </div>
+                            <textarea
+                                value={this.state.content}
+                                onChange={this.handleChange('content')}
+                                cols="30"
+                                rows="10"
+                            />
+                        </div>
                         <button onClick={this.handleSubmit}>POST REVIEW</button>
                     </form>
                 </div>

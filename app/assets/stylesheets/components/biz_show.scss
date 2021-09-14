@@ -1,5 +1,3 @@
-
-
 .biz-photos-container {
     background-color: transparent;
     height: 70vh;
@@ -118,10 +116,11 @@
                 align-items: flex-start;
                 justify-content: center;
 
-                div {
-                    background-color: lightgreen;
+                #map-show-container {
+                    // background-color: lightgreen;
                     width: 85%;
                     height: 100%;
+                    z-index: 15;
                 }
             }
 
@@ -182,15 +181,21 @@
     margin-left: 5%;
     // width: 50%;
     margin-bottom: 2vh;
-    height: 20vh;
+    height: 16.25vh;
     display: flex;
     flex-direction: column;
     font-family: $inter;
+    padding-bottom: 20px;
 
     h2 {
         margin-bottom: 1em;
         padding-top: 0.75em;
         font-size: 1.15em;
         font-weight: bold;
+    }
+
+    p {
+        overflow: hidden;
+        
     }
 }

@@ -1,4 +1,4 @@
-json.extract! @business, :id, :biz_name, :address, :type_id, :city_id, :hours
+json.extract! @business, :id, :biz_name, :address, :city_id, :hours, :description, :types, :lat, :lng
 
 # rating = 0
 # sum = 0
