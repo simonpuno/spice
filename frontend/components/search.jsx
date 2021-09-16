@@ -20,7 +20,6 @@ class Search extends React.Component {
 
     handleSearchClick(e) {
         e.preventDefault();
-        // debugger;
         this.props.updateFilter('biz_type', this.state.find)
         this.props.history.push('/businesses')
     }

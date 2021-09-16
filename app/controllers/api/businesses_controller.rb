@@ -2,7 +2,7 @@ class Api::BusinessesController < ApplicationController
 
     def index 
         # @businesses = Business.includes(:reviews, :types).with_attached_photos.all 
-        # debugger
+
         if params[:biz_type] == ""
             @businesses = Business.includes(:reviews, :types)
                             .with_attached_photos.all
