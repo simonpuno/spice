@@ -11,6 +11,7 @@ import { faDirections } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faFireAlt } from '@fortawesome/free-solid-svg-icons';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import Footer from './footer';
 
 class BusinessShow extends React.Component{
     constructor(props){
@@ -54,7 +55,7 @@ class BusinessShow extends React.Component{
                         <h1>{business.biz_name}</h1>
                         <h4 className='show-rating'>{Object.values(flames)} <span className='num-reviews'>{numReviews} reviews</span></h4>
                         <h4><span className='claimed'><FontAwesomeIcon icon={faCheckCircle} /> Claimed</span> &#183; $ &#183; {types}</h4>
-                        <h4>Open Today?</h4>
+                        <h4>Open {business.hours}</h4>
                     </div>
                     <button className='review-btn' onClick={this.handleWriteReview}> <FontAwesomeIcon icon={faStar}/> WRITE A REVIEW</button>
                     <div className='show-section-flex-container'>
@@ -88,7 +89,7 @@ class BusinessShow extends React.Component{
                         <div className='right-bar-container'>
                             <div className='right-bar'>
                                 <div>
-                                    <a href="https://github.com/simonpuno/spice">spice GitHub</a>
+                                    <a target="_blank" href="https://github.com/simonpuno/spice">spice GitHub</a>
                                     <span><FontAwesomeIcon icon={faExternalLinkAlt} /></span>
                                 </div>
                                 <div>
@@ -107,6 +108,7 @@ class BusinessShow extends React.Component{
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>
         )
     }

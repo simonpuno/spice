@@ -1,5 +1,6 @@
 import React from 'react';
 import BusinessIndexItem from './business_index_item';
+import Footer from './footer';
 import HeaderContainer from './header_container';
 import Map from './map';
 
@@ -17,6 +18,7 @@ class BusinessIndex extends React.Component {
                 <BusinessIndexItem rank={idx+1} rating={biz.rating} key={biz.id} business={biz} fetchBusiness={this.props.fetchBusiness}/> 
             )
         })
+        
         return (
             <div>
                 <header className='biz-index-header'>
@@ -26,6 +28,9 @@ class BusinessIndex extends React.Component {
                 <Map businesses={this.props.businesses}/>
                 <div className='biz-index-container'>
                     <ul className='biz-ul'>{bizLis}</ul>
+                </div>
+                <div className='index-footer'>
+                <Footer />
                 </div>
             </div>
         )

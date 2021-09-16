@@ -38,4 +38,9 @@ export default class MarkerManager {
             })
         }
     }
+
+    clearMarkers() {
+        this.map = null;
+        this.markers = {};
+    }
 }

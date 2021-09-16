@@ -20,6 +20,7 @@ $earth-brown: #ad5f15;
     width: 100%;
     background-image: image-url('peppers.jpeg');
     background-size: 100%, 100%;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -131,4 +132,46 @@ $earth-brown: #ad5f15;
             }
         }
     }
+}
+
+.footer {
+    display: flex;
+    height: 35vh;
+    justify-content: space-around;
+    font-family: $inter;
+    background-color: #f2f2f2;
+
+    div {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+            color: black;
+            margin-block: 1.15em;
+            font-weight: bold;
+        }
+
+        ul {
+            color: grey;
+            
+            li {
+                margin-block: 0.75em;
+
+                a {
+                    text-decoration: none;
+                    color: grey;
+
+                    &:hover {
+                        cursor: pointer;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.index-footer {
+    margin-right: 30%;
 }

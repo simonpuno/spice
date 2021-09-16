@@ -27,6 +27,12 @@ class Map extends React.Component{
         this.MarkerManager.updateMarkers(this.props.businesses);
     }
 
+    componentWillUnmount(){
+        this.MarkerManager.clearMarkers();
+        this.map = null;
+        
+    }
+
     render(){
         return (
             <div id={this.props.businesses.length === 1 ? 'map-show-container' : 'map-container'} ref={map => this.mapNode = map}>

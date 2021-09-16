@@ -1,7 +1,7 @@
 import { UPDATE_FILTER } from "../actions/filter_actions";
 
 const defaultFilters = {
-    ya: ''
+    default: null
 }
 
 const filtersReducer = (state=defaultFilters, action) => {

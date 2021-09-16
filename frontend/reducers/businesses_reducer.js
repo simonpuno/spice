@@ -1,4 +1,5 @@
 import { RECEIVE_BUSINESSES, RECEIVE_BUSINESS } from "../actions/business_actions";
+import { UPDATE_FILTER } from "../actions/filter_actions";
 
 const businessesReducer = (oldState={}, action) => {
     Object.freeze(oldState);
@@ -9,6 +10,8 @@ const businessesReducer = (oldState={}, action) => {
         case RECEIVE_BUSINESS:
             newState[action.business.id] = action.business 
             return newState;
+        case UPDATE_FILTER:
+            return {};
         default:
             return oldState;
     }

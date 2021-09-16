@@ -1,6 +1,7 @@
 import React from 'react';
 import LogoutDropdown from './logout_dropdown';
 import SearchContainer from './search_container';
+import Footer from './footer';
 import { withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPepperHot } from '@fortawesome/free-solid-svg-icons';
@@ -47,9 +48,7 @@ class Splash extends React.Component{
                 <div className='middle-links'>
 
                 </div>
-                <div className='footer'>
-
-                </div>
+                <Footer />
             </div>
         )
     }
