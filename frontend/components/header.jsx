@@ -3,6 +3,8 @@ import { withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPepperHot } from '@fortawesome/free-solid-svg-icons';
 import LogoutDropdown from './logout_dropdown';
+import SearchContainer from './search_container';
+import NavSearchContainer from './nav_search_container';
 
 class Header extends React.Component {
     constructor(props){
@@ -44,6 +46,7 @@ class Header extends React.Component {
         return (
             <div className='nav-bar'>
                 <h1 className='title' onClick={this.handleLogoClick}>spice <FontAwesomeIcon icon={faPepperHot}/></h1>
+                <NavSearchContainer />
                 {display}
             </div>
         )

@@ -1,10 +1,10 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
-class Search extends React.Component {
-    constructor(props){
+class NavSearch extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {
             find: "",
@@ -14,7 +14,7 @@ class Search extends React.Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
-    handleChange(type){
+    handleChange(type) {
         return e => this.setState({ [type]: e.target.value })
     }
 
@@ -25,13 +25,13 @@ class Search extends React.Component {
         this.props.history.push('/businesses')
     }
 
-    render(){
+    render() {
         return (
             <div className='splash-inputs-container'>
-                <label className='left-input'> Find
+                <label className='left-input'>
                     <input placeholder='sushi, tacos, dinner... ' onChange={this.handleChange('find')} type="text" />
                 </label>
-                <label className='right-input'> Near
+                <label className='right-input'>
                     <input placeholder='Chicago, IL' onChange={this.handleChange('near')} type="text" />
                 </label>
                 <button onClick={this.handleSearchClick}>
@@ -42,4 +42,4 @@ class Search extends React.Component {
     }
 }
 
-export default withRouter(Search);
+export default withRouter(NavSearch);

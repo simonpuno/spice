@@ -1,0 +1,33 @@
+.nav-bar {
+    .splash-inputs-container {
+        input {
+            border: none;
+            resize: none;
+            outline: none;
+            height: 2.5em;
+            width: 13em;
+        }
+
+        .left-input {
+            input {
+                border-right: 1px solid lightgray;
+                border-radius: 4px 0px 0px 4px;
+            }
+        }
+
+        button {
+            height: 2.7234em;
+            width: 3em;
+            background-color: $spicy-red;
+            border: none;
+            outline: none;
+            border-radius: 0px 4px 4px 0px;
+            color: white;
+            font-family: $inter;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
