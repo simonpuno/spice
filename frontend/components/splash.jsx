@@ -1,8 +1,8 @@
 import React from 'react';
-import LogoutDropdown from './logout_dropdown'
+import LogoutDropdown from './logout_dropdown';
+import SearchContainer from './search_container';
 import { withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { faPepperHot } from '@fortawesome/free-solid-svg-icons';
 
 class Splash extends React.Component{
@@ -11,7 +11,6 @@ class Splash extends React.Component{
         super(props);
         this.handleLoginClick = this.handleLoginClick.bind(this);
         this.handleSignupClick = this.handleSignupClick.bind(this);
-        this.handleSearchClick = this.handleSearchClick.bind(this);
     }
 
     handleSignupClick(e) {
@@ -22,11 +21,6 @@ class Splash extends React.Component{
     handleLoginClick(e) {
         e.preventDefault();
         this.props.history.push('/login');
-    }
-
-    handleSearchClick(e) {
-        e.preventDefault();
-        this.props.history.push('/businesses')
     }
 
     render(){
@@ -48,17 +42,7 @@ class Splash extends React.Component{
                 <div className='splash-top-container'>
                         {display}
                         <h1 className='splash-logo'>spice <FontAwesomeIcon icon={faPepperHot} /></h1>
-                        <div className='splash-inputs-container'>
-                            <label className='left-input'> Find
-                                <input type="text" />
-                            </label>
-                            <label className='right-input'> Near
-                                <input type="text" />
-                            </label>
-                            <button onClick={this.handleSearchClick}>
-                                <FontAwesomeIcon icon={faSearch}/>
-                            </button>
-                        </div>
+                        <SearchContainer /> 
                 </div>
                 <div className='middle-links'>
 

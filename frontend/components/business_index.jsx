@@ -6,7 +6,8 @@ import Map from './map';
 class BusinessIndex extends React.Component {
 
     componentDidMount(){
-        this.props.fetchBusinesses()
+        // this.props.updateFilter(this.props.filters)
+        this.props.fetchBusinesses(this.props.filters)
     }
 
     render(){

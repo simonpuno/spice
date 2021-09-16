@@ -12,8 +12,8 @@ const receiveBusiness = (business) => ({
     business
 })
 
-export const fetchBusinesses = () => dispatch => (
-    fetchBusinessesUtil()
+export const fetchBusinesses = (filters) => dispatch => (
+    fetchBusinessesUtil(filters)
         .then(businesses => dispatch(receiveBusinesses(businesses)))
 )
 

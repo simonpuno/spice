@@ -38,4 +38,10 @@ class Business < ApplicationRecord
 
     # has_one_attached :photo
     has_many_attached :photos
+
+    def self.by_type(type)
+        Business 
+            .joins(:types)
+            .where('types.biz_type LIKE ?', type)
+    end
 end

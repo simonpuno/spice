@@ -2,8 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from './components/root'
-import {signup, login, logout} from './util/session_api_util'
 import {fetchBusinesses, fetchBusiness} from './actions/business_actions'
+import {fetchBusinessesUtil} from './util/business_api_util';
+import {updateFilter} from './actions/filter_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
@@ -24,8 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.getState = store.getState;
     window.dispatch = store.dispatch;
+    window.fetchBusinessesUtil = fetchBusinessesUtil;
     window.fetchBusinesses = fetchBusinesses
     window.fetchBusiness = fetchBusiness
+    window.updateFilter = updateFilter;
     // window.signup = signup
     // window.login = login 
     // window.logout = logout
