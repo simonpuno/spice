@@ -11,6 +11,10 @@ class Api::BusinessesController < ApplicationController
             @businesses = Business.includes(:reviews, :types)
                             .with_attached_photos.all.by_type(params[:biz_type][0].upcase + params[:biz_type][1..-1]) # 
             render :index 
+        else 
+            @businesses = Business.includes(:reviews, :types)
+                            .with_attached_photos.all
+            render :index
         end
                             
     end

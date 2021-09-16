@@ -1,11 +1,15 @@
 .nav-bar {
+    
     .splash-inputs-container {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
         input {
             border: none;
             resize: none;
             outline: none;
             height: 2.5em;
             width: 13em;
+            
         }
 
         .left-input {
