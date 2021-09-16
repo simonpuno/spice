@@ -5,7 +5,9 @@ import CreateReviewForm from './create_review_form';
 
 const mSTP = (state, ownProps) => ({
     business: state.entities.businesses[ownProps.match.params.businessId],
-    userId: state.session.id 
+    userId: state.session.id,
+    errors: state.errors.review,
+    currentUser: state.entities.users[state.session.id]
 })
 
 const mDTP = dispatch => ({

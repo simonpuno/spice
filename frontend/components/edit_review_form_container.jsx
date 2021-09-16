@@ -7,6 +7,7 @@ const mSTP = (state, ownProps) => ({
     business: state.entities.businesses[ownProps.match.params.businessId],
     review: state.entities.reviews[ownProps.match.params.reviewId],
     userId: state.session.id,
+    errors: state.errors.review
 })
 
 const mDTP = dispatch => ({

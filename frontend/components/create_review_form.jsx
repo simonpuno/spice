@@ -37,6 +37,9 @@ class CreateReviewForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
+        if (!this.props.currentUser) {
+            this.props.history.push('/signup')
+        }
         const review = this.state;
         this.props.createReview(review)
             .then(() => this.props.history.push(`/businesses/${this.state.business_id}`))
@@ -58,6 +61,12 @@ class CreateReviewForm extends React.Component{
 
     render(){
         if (!this.props.business) return null;
+        let errors = null;
+        if (this.props.errors) {
+            errors = this.props.errors.map((err, idx) => (
+                <li className='login-error' key={idx}>{err}</li>
+            ))
+        }
 
         let ratingText = 'Select your rating';
         if (this.state.val === '1') {
@@ -81,6 +90,7 @@ class CreateReviewForm extends React.Component{
                 </header>
                 <div className='review-form-container'>
                     <h2>{this.props.business.biz_name}</h2>
+                    <ul>{errors}</ul>
                     <form className='review-form'>
                         <div className='review-inputs'>
                             <div className='rating-inputs'>
