@@ -28,9 +28,6 @@ class LogoutDropdown extends React.Component {
                     <FontAwesomeIcon icon={faCaretDown}/>
                     <div onClick={(e) => e.stopPropagation()} className={this.state.show ? "show-dropdown" : "hide-dropdown"}>
                         <ul className='dropdown-list'>
-                            <li>About Me</li>
-                            <li>Friends</li>
-                            <li>Settings</li>
                             <li className='logout-link' onClick={this.props.logout}>Logout</li>
                             {/* className='logout-btn' */}
                         </ul>
