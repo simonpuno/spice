@@ -104,7 +104,7 @@ class SessionForm extends React.Component {
                             placeholder='Email'
                         /> 
                         <input
-                            type="text"
+                            type="password"
                             className='signup-input'
                             value={this.state.password}
                             onChange={this.handleChange('password')}
