@@ -16,12 +16,12 @@ class Splash extends React.Component{
 
     handleSignupClick(e) {
         e.preventDefault();
-        this.props.history.push('/signup');
+        this.props.history.push('/signup', { lastUrl: this.props.location.pathname });
     }
 
     handleLoginClick(e) {
         e.preventDefault();
-        this.props.history.push('/login');
+        this.props.history.push('/login', { lastUrl: this.props.location.pathname });
     }
 
     render(){

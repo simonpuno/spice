@@ -16,12 +16,15 @@ class Header extends React.Component {
 
     handleSignupClick(e){
         e.preventDefault();
+        this.props.receiveRoute(this.props.location.pathname);
         this.props.history.push('/signup');
     }
 
     handleLoginClick(e){
         e.preventDefault();
+        this.props.receiveRoute(this.props.location.pathname);
         this.props.history.push('/login');
+        // this.props.history.push('/login', {lastUrl: this.props.location.pathname });
     }
 
     handleLogoClick(e){

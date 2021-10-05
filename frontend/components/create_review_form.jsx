@@ -38,6 +38,7 @@ class CreateReviewForm extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         if (!this.props.currentUser) {
+            this.props.receiveRoute(this.props.location.pathname);
             this.props.history.push('/signup')
         }
         const review = this.state;
