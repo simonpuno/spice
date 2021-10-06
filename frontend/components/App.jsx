@@ -8,6 +8,7 @@ import BusinessIndexContainer from './business_index_container';
 import BusinessShowContainer from './business_show_container';
 import CreateReviewFormContainer from './create_review_form_container';
 import EditReviewFormContainer from './edit_review_form_container';
+import InvalidSearch from "./invalid_search";
 
 const App = () => {
     return (
@@ -16,6 +17,7 @@ const App = () => {
             <AuthRoute path="/login" component={LoginFormContainer} />
             <AuthRoute path="/signup" component={SignupFormContainer} />
             <Route exact path="/businesses" component={BusinessIndexContainer} />
+            <Route exact path="/invalid" component={InvalidSearch} />
             <Route exact path={`/businesses/:businessId`} component={BusinessShowContainer} />
             <Route exact path={`/businesses/:businessId/reviews/new`} component={CreateReviewFormContainer} />
             <Route exact path={`/businesses/:businessId/reviews/:reviewId/edit`} component={EditReviewFormContainer} />

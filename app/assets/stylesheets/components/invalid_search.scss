@@ -1,0 +1,20 @@
+.invalid-container {
+    display: flex;
+    flex-direction: column;
+    font-family: $inter;
+    align-items: center;
+    padding-block: 20px;
+
+    h1 {
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+
+    li, span {
+        font-weight: bold;
+    }
+
+    * {
+        margin-block: 0.5em;
+    }
+}

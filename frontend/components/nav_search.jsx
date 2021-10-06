@@ -13,6 +13,15 @@ class NavSearch extends React.Component {
         this.handleSearchClick = this.handleSearchClick.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.validCategories = [
+            'mexican',
+            'tacos',
+            'sushi',
+            'japanese',
+            'ramen',
+            'lunch',
+            'dinner'
+        ]
     }
 
     handleChange(type) {
@@ -21,15 +30,22 @@ class NavSearch extends React.Component {
 
     handleSearchClick(e) {
         e.preventDefault();
-
-        this.props.updateFilter('biz_type', this.state.find)
-        this.props.history.push('/businesses')
+        if (this.validCategories.includes(this.state.find.toLowerCase()) && this.state.near.toLowerCase().includes('chicago')) {
+            this.props.updateFilter('biz_type', this.state.find)
+            this.props.history.push('/businesses')
+        } else {
+            this.props.history.push('/invalid')
+        }
     }
 
     handleSubmit(e) {
         if (e.key === "Enter") {
-            this.props.updateFilter('biz_type', this.state.find)
-            this.props.history.push('/businesses')
+            if (this.validCategories.includes(this.state.find.toLowerCase()) && this.state.near.toLowerCase().includes('chicago')) {
+                this.props.updateFilter('biz_type', this.state.find)
+                this.props.history.push('/businesses')
+            } else {
+                this.props.history.push('/invalid')
+            }
         };
     }
 
