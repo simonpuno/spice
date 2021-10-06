@@ -101,7 +101,7 @@ class BusinessShow extends React.Component{
                                     <span><FontAwesomeIcon icon={faDirections} /></span>
                                 </div>
                                 <div>
-                                    <h4><a href="mailto: simonpuno@gmail.com">Send Me an Email</a></h4>
+                                    <h4><a target="_blank" href="mailto: simonpuno@gmail.com">Send Me an Email</a></h4>
                                     <span><FontAwesomeIcon icon={faEnvelope} /></span>
                                 </div>
                             </div>
