@@ -135,7 +135,7 @@ This feature was fun to implement. When a user hovers over a star rating on the 
 ```
 
 # Future Functionality
-* Add more businesses to the database to expand seearch terms and filters.
+* Add more businesses to the database to expand search terms and filters.
 * Add additional cities.
 * Create User Profiles, so users can see all the reviews they've written.
 * Add profile photos for users that will show up next to their reviews. 
